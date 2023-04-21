@@ -44,6 +44,7 @@ const product = mongoose.model("Product",productSchema);
 app.route("/")
 
 .get(async function(req,res){
+  res.setHeader('Access-Control-Allow-Origin', 'https://master--hilarious-cupcake-4401da.netlify.app/');
   try{
     const items = await product.find({});
     res.send(items);
